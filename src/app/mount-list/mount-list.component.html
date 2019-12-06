@@ -1,0 +1,26 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Mount List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Animal</th>
+        <th>Trial</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let mount of mounts | async">
+        <td>{{mount.name}}</td>
+        <td>{{mount.animal}}</td>
+        <td>{{mount.trial}}</td>
+        <td><button (click)="deleteMount(mount.id)" class="btn btn-danger">Delete</button>
+          <button (click)="mountDetails(mount.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
